@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Método gráfico paso a paso con ejercicios de maximización de ganancias y minimización de costos aplicados a un gimnasio.">
+    <title>Método gráfico</title>
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="static/css/transporte.css">
+    <link rel="stylesheet" href="static/css/formulacion.css">
+<link rel="stylesheet" href="static/css/editorial.css"></head>
+<body class="edicion-editorial pagina-articulo">
+    <header class="encabezado">
+        <nav class="navegacion" aria-label="Navegación del artículo">
+            <a href="index.html" class="logo" aria-label="Ir a la página principal">
+                <span class="logo-icono">IO</span>
+                <span class="logo-texto">Investigación de Operaciones</span>
+            </a>
+            <ul class="menu menu-articulo">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#maximizacion">Maximización</a></li>
+                <li><a href="#minimizacion">Minimización</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="articulo">
+        <section class="portada-articulo">
+            <p class="etiqueta-articulo">Módulo 1 · Investigación de Operaciones</p>
+            <h1>Método gráfico</h1>
+            <p class="descripcion-articulo">Maximización y minimización mediante la región factible y sus vértices.</p>
+            <div class="datos-articulo"><span>Fase 1</span><span>Agosto de 2026</span></div>
+        </section>
+
+        <section class="contenido-articulo" id="teoria">
+            <p class="indicador-seccion">Fundamentos</p>
+            <h2>¿Qué es el método gráfico?</h2>
+            <p>El método gráfico permite resolver problemas de programación lineal con dos variables de decisión. Consiste en representar las restricciones en un plano cartesiano, identificar la región factible y evaluar sus vértices para encontrar la mejor solución.</p>
+            <h2>Conceptos principales</h2>
+            <div class="componentes">
+                <article><h3>Variables de decisión</h3><p>Cantidades que queremos determinar.</p></article>
+                <article><h3>Función objetivo</h3><p>Expresión que buscamos maximizar o minimizar.</p></article>
+                <article><h3>Restricciones</h3><p>Condiciones que deben respetarse.</p></article>
+                <article><h3>No negatividad</h3><p>Limita las variables a valores iguales o mayores que cero.</p></article>
+                <article><h3>Región factible</h3><p>Conjunto de puntos que cumplen todas las restricciones.</p></article>
+                <article><h3>Solución óptima</h3><p>Solución factible que produce el mejor valor del objetivo.</p></article>
+            </div>
+            <h2>Procedimiento general</h2>
+            <div class="metodo">
+                <ol>
+                    <li>Definir las variables.</li>
+                    <li>Formular la función objetivo.</li>
+                    <li>Plantear las restricciones y la no negatividad.</li>
+                    <li>Convertir cada desigualdad en igualdad para obtener su recta.</li>
+                    <li>Calcular los interceptos con ambos ejes.</li>
+                    <li>Dibujar las rectas y determinar qué lado satisface cada desigualdad.</li>
+                    <li>Identificar la región factible y sus vértices.</li>
+                    <li>Evaluar la función objetivo en cada vértice.</li>
+                    <li>Seleccionar el mayor resultado para maximizar o el menor para minimizar.</li>
+                    <li>Interpretar la solución.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="contenido-articulo fondo-claro" id="maximizacion">
+            <p class="indicador-seccion">Ejercicio 1</p>
+            <h2>Maximización de ganancias</h2>
+            <p>Un gimnasio vende batidos proteicos y bowls de fruta con yogur.</p>
+            <div class="tabla-contenedor" role="region" aria-label="Datos de batidos y bowls; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Dato por producto</th><th scope="col">Batido</th><th scope="col">Bowl</th><th scope="col">Disponible diario</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ingredientes</td><td>2 unidades</td><td>1 unidad</td><td>100 unidades</td></tr>
+                        <tr><td>Tiempo de preparación</td><td>1 unidad</td><td>2 unidades</td><td>80 unidades</td></tr>
+                        <tr><td>Ganancia</td><td>Q12</td><td>Q18</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Variables y modelo</h2>
+            <p><strong>x:</strong> cantidad de batidos proteicos.</p>
+            <p><strong>y:</strong> cantidad de bowls.</p>
+            <div class="formula">Maximizar Z = 12x + 18y<br>Sujeto a:<br>2x + y ≤ 100<br>x + 2y ≤ 80<br>x, y ≥ 0</div>
+
+            <h2>Calcular los interceptos</h2>
+            <p>Para <strong>2x + y = 100</strong>:</p>
+            <p>Si y = 0: 2x = 100 → x = 50 → <strong>(50, 0)</strong>.</p>
+            <p>Si x = 0: y = 100 → <strong>(0, 100)</strong>.</p>
+            <p>Para <strong>x + 2y = 80</strong>:</p>
+            <p>Si y = 0: x = 80 → <strong>(80, 0)</strong>.</p>
+            <p>Si x = 0: 2y = 80 → y = 40 → <strong>(0, 40)</strong>.</p>
+
+            <h2>Encontrar la intersección</h2>
+            <p>De la primera ecuación despejamos y = 100 − 2x. Sustituimos en la segunda:</p>
+            <div class="formula">x + 2(100 − 2x) = 80<br>x + 200 − 4x = 80<br>−3x = −120<br>x = 40</div>
+            <p>Después sustituimos x = 40:</p>
+            <div class="formula">y = 100 − 2(40)<br>y = 20</div>
+            <p>La intersección es <strong>(40, 20)</strong>.</p>
+
+            <h2>Identificar la región factible</h2>
+            <p>Probamos el origen:</p>
+            <div class="formula">2(0) + 0 ≤ 100<br>0 + 2(0) ≤ 80</div>
+            <p>Ambas desigualdades se cumplen. Seleccionamos el lado de cada recta que contiene el origen, dentro del primer cuadrante.</p>
+            <p>Los vértices son <strong>(0, 0), (0, 40), (40, 20) y (50, 0)</strong>.</p>
+            <figure>
+                <img src="static/img/metodo-grafico-maximizacion.png" width="1277" height="834" style="display: block; max-width: 100%; height: auto;" alt="Región factible del modelo de batidos y bowls, delimitada por 2x + y ≤ 100, x + 2y ≤ 80 y la no negatividad. El óptimo es (40, 20).">
+                <figcaption>Gráfica de maximización del documento de la fase 1: 40 batidos y 20 bowls.</figcaption>
+            </figure>
+
+            <h2>Evaluar la función objetivo</h2>
+            <div class="tabla-contenedor" role="region" aria-label="Evaluación de ganancias; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Vértice</th><th scope="col">Sustitución en Z = 12x + 18y</th><th scope="col">Ganancia</th></tr></thead>
+                    <tbody>
+                        <tr><td>(0, 0)</td><td>12(0) + 18(0)</td><td>Q0</td></tr>
+                        <tr><td>(0, 40)</td><td>12(0) + 18(40)</td><td>Q720</td></tr>
+                        <tr><td>(40, 20)</td><td>12(40) + 18(20)</td><td><strong>Q840</strong></td></tr>
+                        <tr><td>(50, 0)</td><td>12(50) + 18(0)</td><td>Q600</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Interpretación</h2>
+            <div class="resultado-final"><strong>Ganancia máxima diaria: Q840</strong><p>El gimnasio debe preparar 40 batidos y 20 bowls diarios.</p></div>
+            <p><strong>Ingredientes:</strong> 2(40) + 20 = 100 unidades.</p>
+            <p><strong>Tiempo:</strong> 40 + 2(20) = 80 unidades.</p>
+        </section>
+
+        <section class="contenido-articulo" id="minimizacion">
+            <p class="indicador-seccion">Ejercicio 2</p>
+            <h2>Minimización de costos</h2>
+            <p>Un gimnasio desea promocionar una membresía mediante dos paquetes publicitarios.</p>
+            <div class="tabla-contenedor" role="region" aria-label="Datos de paquetes publicitarios; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Dato por paquete</th><th scope="col">Paquete A</th><th scope="col">Paquete B</th><th scope="col">Requisito mínimo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Alcance</td><td>2 unidades</td><td>1 unidad</td><td>10 unidades</td></tr>
+                        <tr><td>Interacción</td><td>1 unidad</td><td>2 unidades</td><td>8 unidades</td></tr>
+                        <tr><td>Costo</td><td>Q40</td><td>Q50</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Variables y modelo</h2>
+            <p><strong>x:</strong> cantidad de paquetes A.</p>
+            <p><strong>y:</strong> cantidad de paquetes B.</p>
+            <div class="formula">Minimizar Z = 40x + 50y<br>Sujeto a:<br>2x + y ≥ 10<br>x + 2y ≥ 8<br>x, y ≥ 0</div>
+            <p>Usamos ≥ porque la campaña debe alcanzar, como mínimo, los requisitos establecidos.</p>
+
+            <h2>Calcular los interceptos</h2>
+            <p>Para <strong>2x + y = 10</strong>:</p>
+            <p>Si y = 0: 2x = 10 → x = 5 → <strong>(5, 0)</strong>.</p>
+            <p>Si x = 0: y = 10 → <strong>(0, 10)</strong>.</p>
+            <p>Para <strong>x + 2y = 8</strong>:</p>
+            <p>Si y = 0: x = 8 → <strong>(8, 0)</strong>.</p>
+            <p>Si x = 0: 2y = 8 → y = 4 → <strong>(0, 4)</strong>.</p>
+
+            <h2>Encontrar la intersección</h2>
+            <p>Despejamos y = 10 − 2x y sustituimos en la segunda ecuación:</p>
+            <div class="formula">x + 2(10 − 2x) = 8<br>x + 20 − 4x = 8<br>−3x + 20 = 8<br>−3x = −12<br>x = 4</div>
+            <p>Después sustituimos x = 4:</p>
+            <div class="formula">y = 10 − 2(4)<br>y = 2</div>
+            <p>La intersección es <strong>(4, 2)</strong>.</p>
+
+            <h2>Identificar la región factible</h2>
+            <p>El origen no cumple los requisitos:</p>
+            <div class="formula">2(0) + 0 ≥ 10 → falso<br>0 + 2(0) ≥ 8 → falso</div>
+            <p>Seleccionamos la zona que satisface simultáneamente ambas desigualdades y la no negatividad. La región se extiende hacia valores mayores de las variables.</p>
+            <p>Sus vértices son <strong>(0, 10), (4, 2) y (8, 0)</strong>.</p>
+            <figure>
+                <img src="static/img/metodo-grafico-minimizacion.png" width="1278" height="839" style="display: block; max-width: 100%; height: auto;" alt="Región factible del modelo publicitario, por encima de las rectas 2x + y = 10 y x + 2y = 8 en el primer cuadrante. El óptimo se encuentra en (4, 2).">
+                <figcaption>Gráfica de minimización del documento de la fase 1: 4 paquetes A y 2 paquetes B.</figcaption>
+            </figure>
+
+            <h2>Evaluar la función objetivo</h2>
+            <div class="tabla-contenedor" role="region" aria-label="Evaluación de costos; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Vértice</th><th scope="col">Sustitución en Z = 40x + 50y</th><th scope="col">Costo</th></tr></thead>
+                    <tbody>
+                        <tr><td>(0, 10)</td><td>40(0) + 50(10)</td><td>Q500</td></tr>
+                        <tr><td>(4, 2)</td><td>40(4) + 50(2)</td><td><strong>Q260</strong></td></tr>
+                        <tr><td>(8, 0)</td><td>40(8) + 50(0)</td><td>Q320</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>Interpretación</h2>
+            <div class="resultado-final"><strong>Costo mínimo: Q260</strong><p>El gimnasio debe contratar 4 paquetes A y 2 paquetes B.</p></div>
+            <p><strong>Alcance:</strong> 2(4) + 2 = 10 unidades.</p>
+            <p><strong>Interacción:</strong> 4 + 2(2) = 8 unidades.</p>
+        </section>
+
+        <section class="contenido-articulo fondo-claro">
+            <p class="indicador-seccion">Cierre</p>
+            <h2>Conclusión</h2>
+            <p>El método gráfico muestra cómo las restricciones delimitan las decisiones posibles. La representación de las rectas, la identificación de la región factible y la evaluación de sus vértices permiten resolver e interpretar problemas de maximización y minimización con dos variables.</p>
+            <div class="video-articulo" id="videos">
+                <h2>Videos explicativos</h2>
+                <div class="tarjeta-videos">
+                    <img class="imagen-videos" src="static/img/metodo-grafico-video.png" alt="Método gráfico: función objetivo, restricciones, región factible y solución óptima." width="1672" height="941" loading="lazy">
+                    <div class="contenido-videos">
+                        <span class="etiqueta-videos">Módulo 1 · Videotutoriales</span>
+                        <h3>Método gráfico</h3>
+                        <div class="enlaces-videos">
+                            <a class="enlace-video" href="https://drive.google.com/file/d/1a1klatyzSN5rZMUQNdCuaN_4-T75lF2k/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icono-video" aria-hidden="true">▶</span><span>Ver video<small>Abrir en Google Drive</small></span><span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="boton-regresar">← Regresar a la página principal</a>
+        </section>
+    </main>
+    <footer class="pie-pagina">
+        <p>Método gráfico · Blog de Conocimiento IO</p>
+        <p>Universidad Mariano Gálvez de Guatemala · 2026</p>
+    </footer>
+</body>
+</html>

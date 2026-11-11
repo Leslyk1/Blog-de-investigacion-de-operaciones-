@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Redes (PERT/CPM) · Blog de Conocimiento IO</title>
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="static/css/transporte.css">
+    
+    <link rel="stylesheet" href="static/css/formulacion.css">
+
+<link rel="stylesheet" href="static/css/editorial.css"></head>
+<body class="edicion-editorial pagina-articulo">
+    <header class="encabezado">
+        <nav class="navegacion" aria-label="Navegación del artículo">
+            <a href="index.html" class="logo">
+                <span class="logo-icono">IO</span>
+                <span>Investigación de Operaciones</span>
+            </a>
+        </nav>
+    </header>
+    <main class="articulo">
+        <section class="portada-articulo">
+            <p class="etiqueta-articulo">Módulo 3 · Investigación de Operaciones</p>
+            <h1>Teoría de Redes (PERT/CPM)</h1>
+            <p class="descripcion-articulo">Cómo planificar un proyecto, calcular su duración y detectar las actividades que condicionan la entrega.</p>
+        </section>
+        
+<section class="contenido-articulo">
+    <p class="indicador-seccion">Fundamentos</p>
+    <h2>De las actividades a la red del proyecto</h2>
+    <p>Una red representa cada actividad con un nodo y cada relación de precedencia con una flecha. Una ruta es una secuencia de actividades conectadas. La red permite ver qué tareas pueden ejecutarse en paralelo y cuáles deben esperar a que otras terminen.</p>
+    <div class="componentes">
+        <article><h3>CPM: método de la ruta crítica</h3><p>Usa una duración por actividad para calcular el plazo del proyecto y la holgura de cada tarea.</p></article>
+        <article><h3>PERT: evaluación y revisión de programas</h3><p>Usa tres estimaciones por actividad cuando sus duraciones son inciertas: optimista (a), más probable (m) y pesimista (b).</p></article>
+    </div>
+    <div class="formula">Tiempo esperado = (a + 4m + b) / 6<br>Varianza aproximada = [(b − a) / 6]²</div>
+    <p>En PERT se usan los tiempos esperados para recorrer la red. Si se estima la probabilidad de cumplir un plazo, el resultado depende de supuestos sobre la independencia de las duraciones y la estabilidad de la ruta crítica.</p>
+</section>
+<section class="contenido-articulo fondo-claro">
+    <p class="indicador-seccion">Caso práctico</p>
+    <h2>Implementación de una aplicación</h2>
+    <p>En el recorrido hacia adelante, el inicio temprano (ES) es el mayor fin temprano (EF) de las predecesoras, o cero si no hay ninguna. EF = ES + duración. En el recorrido hacia atrás, se parte del fin del proyecto: el fin tardío (LF) es el menor inicio tardío (LS) de las sucesoras, y LS = LF − duración.</p>
+    <div class="tabla-contenedor" role="region" aria-label="Cronograma del proyecto de software" tabindex="0">
+        <table>
+            <caption>Precedencias, tiempos y holguras en días</caption>
+            <thead><tr><th scope="col">Actividad</th><th scope="col">Predecesoras</th><th scope="col">Duración</th><th scope="col">ES</th><th scope="col">EF</th><th scope="col">LS</th><th scope="col">LF</th><th scope="col">Holgura</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">A · Definir requisitos</th><td>—</td><td>2</td><td>0</td><td>2</td><td>0</td><td>2</td><td>0</td></tr><tr><th scope="row">B · Diseñar interfaz</th><td>A</td><td>3</td><td>2</td><td>5</td><td>4</td><td>7</td><td>2</td></tr><tr><th scope="row">C · Diseñar base de datos</th><td>A</td><td>4</td><td>2</td><td>6</td><td>2</td><td>6</td><td>0</td></tr><tr><th scope="row">D · Programar interfaz</th><td>B</td><td>5</td><td>5</td><td>10</td><td>7</td><td>12</td><td>2</td></tr><tr><th scope="row">E · Programar backend</th><td>C</td><td>6</td><td>6</td><td>12</td><td>6</td><td>12</td><td>0</td></tr><tr><th scope="row">F · Integrar componentes</th><td>D, E</td><td>3</td><td>12</td><td>15</td><td>12</td><td>15</td><td>0</td></tr><tr><th scope="row">G · Pruebas y entrega</th><td>F</td><td>2</td><td>15</td><td>17</td><td>15</td><td>17</td><td>0</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>La integración (F) espera a D y E. Como terminan en los días 10 y 12, F comienza el día 12 y termina el 15. G requiere dos días más.</p>
+    <div class="resultado-final"><strong>Ruta crítica: A → C → E → F → G · 17 días</strong><p>La holgura total se calcula como LS − ES. En la ruta crítica es cero. B y D tienen dos días de holgura, pero comparten el mismo margen: sus retrasos no se pueden sumar como si fueran independientes.</p></div>
+</section>
+<section class="contenido-articulo">
+    <h2>Aplicaciones y límites</h2>
+    <p>PERT y CPM ayudan a ordenar permisos y obra en construcción, coordinar diseño e integración en software y planificar proveedores y montaje en eventos. Conviene recalcular la red cuando cambian las duraciones, las dependencias o la disponibilidad de personal y equipo.</p>
+</section>
+<section class="contenido-articulo fondo-claro" id="videos">
+    <h2>Videos explicativos</h2>
+    <div class="tarjeta-videos">
+        <img class="imagen-videos" src="static/img/redes-video.png" alt="Portada de Teoría de Redes (PERT/CPM): actividades, precedencias, ruta crítica y tiempos." width="1672" height="941" loading="lazy">
+        <div class="contenido-videos">
+            <span class="etiqueta-videos">Módulo 3 · Videotutoriales</span>
+            <h3>Teoría de Redes (PERT/CPM)</h3>
+            <div class="enlaces-videos">
+                <a class="enlace-video" href="https://drive.google.com/file/d/1QkaKgVR1PBy6Ipo7C_NyXIFRrW4nd-tq/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icono-video" aria-hidden="true">▶</span><span>Ver video<small>Abrir en Google Drive</small></span><span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <div class="contenido-articulo">
+            <a class="boton-regresar" href="index.html#modulos">← Regresar a los módulos</a>
+        </div>
+    </main>
+    <footer class="pie-pagina">Blog de Conocimiento IO · Universidad Mariano Gálvez de Guatemala</footer>
+</body>
+</html>

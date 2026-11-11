@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Blog educativo de Investigación de Operaciones"
+    >
+
+    <title>Blog de Investigación de Operaciones</title>
+
+    <link
+        rel="stylesheet"
+        href="static/css/estilos.css"
+    >
+    <link rel="stylesheet" href="static/css/editorial.css">
+</head>
+
+<body class="edicion-editorial">
+
+    <header class="encabezado">
+        <div class="cabecera-editorial">
+            <div class="datos-edicion"><span>Edición académica</span><span>Universidad Mariano Gálvez de Guatemala</span></div>
+            <h1>Investigación de Operaciones</h1>
+        </div>
+
+        <nav class="navegacion">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icono">IO</span>
+
+                <span class="logo-texto">
+                    Investigación de Operaciones
+                </span>
+
+            </a>
+
+            <button
+                class="boton-menu"
+                id="boton-menu"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
+            <ul class="menu" id="menu">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#modulos">Módulos</a>
+                </li>
+
+                <li>
+                    <a href="#proyecto">Proyecto</a>
+                </li>
+
+                <li>
+                    <a href="#equipo">Equipo</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <p class="etiqueta">Investigación de Operaciones 026</p>
+                <h2>Blog de Conocimiento <span>Aplicaciones prácticas</span></h2>
+                <p class="descripcion">
+                    Un espacio educativo dedicado a explicar de forma
+                    sencilla los principales modelos de Investigación
+                    de Operaciones mediante artículos, ejercicios
+                    prácticos y videos tutoriales.
+                </p>
+                <div class="botones-portada">
+                    <a href="#modulos" class="boton boton-principal">Explorar contenidos</a>
+                    <a href="#proyecto" class="boton boton-secundario">Conocer el proyecto</a>
+                </div>
+            </div>
+            <article class="tarjeta-destacada">
+                <p class="numero-modulo">Contenido destacado · Módulo 2</p>
+                <h2>Modelo de transporte</h2>
+                <p>Determina cómo distribuir productos desde varios orígenes hacia diferentes destinos, buscando satisfacer la demanda y reducir los costos.</p>
+                <ul>
+                    <li>Método de la esquina noroeste</li>
+                    <li>Método del costo mínimo</li>
+                    <li>Aproximación de Vogel</li>
+                    <li>Problemas balanceados y desbalanceados</li>
+                </ul>
+                <a href="modelo-transporte.html" class="enlace-articulo">Leer artículo completo →</a>
+            </article>
+            <svg class="foto-editorial" viewBox="655 282 745 332" role="img" aria-label="Ilustración en sepia de camiones en un centro de distribución">
+                <image href="static/img/maqueta-editorial.png" width="1448" height="1086"/>
+            </svg>
+        </section>
+
+
+        <section class="seccion" id="modulos">
+
+            <div class="titulo-seccion">
+
+                <p>Contenido académico</p>
+
+                <h2>
+                    Módulos del curso
+                </h2>
+
+                <span>
+                    Cada módulo contiene explicaciones teóricas,
+                    aplicaciones prácticas y videos tutoriales.
+                </span>
+
+            </div>
+
+
+            <div class="contenedor-modulos">
+
+                <article class="tarjeta-modulo">
+
+                    <span class="estado">Fase 1</span>
+                    <h3>Módulo 1</h3>
+
+                    <p>
+                        Fundamentos y métodos iniciales de programación
+                        lineal.
+                    </p>
+
+                    <ul>
+                        <li><a href="formulacion.html" class="enlace-tema">Formulación de modelos</a></li>
+                        <li><a href="programacion-lineal.html" class="enlace-tema">Programación lineal</a></li>
+                        <li><a href="metodo-grafico.html" class="enlace-tema">Método gráfico</a></li>
+                        <li><a href="metodo-simplex.html" class="enlace-tema">Método Simplex</a></li>
+                    </ul>
+
+
+                </article>
+
+
+                <article class="tarjeta-modulo">
+
+                    <span class="estado">Fase 2</span>
+                    <h3>Módulo 2</h3>
+
+                    <p>
+                        Modelos utilizados para analizar costos,
+                        recursos y asignaciones.
+                    </p>
+
+                    <ul>
+                        <li><a href="dualidad.html" class="enlace-tema">Dualidad</a></li>
+                        <li><a href="sensibilidad.html" class="enlace-tema">Análisis de sensibilidad</a></li>
+                        <li><a href="modelo-transporte.html" class="enlace-tema">Modelo de transporte</a></li>
+                        <li><a href="asignacion.html" class="enlace-tema">Modelo de asignación</a></li>
+                    </ul>
+
+                </article>
+
+
+                <article class="tarjeta-modulo">
+
+                    <span class="estado">Fase 3</span>
+                    <h3>Módulo 3</h3>
+
+                    <p>
+                        Herramientas utilizadas para planificar
+                        proyectos y administrar inventarios.
+                    </p>
+
+                    <ul>
+                        <li><a href="teoria-de-redes.html" class="enlace-tema">Teoría de Redes (PERT/CPM)</a></li>
+                        <li><a href="teoria-de-inventarios.html" class="enlace-tema">Teoría de Inventarios (Modelos Determinísticos)</a></li>
+                    </ul>
+
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="proyecto" id="proyecto">
+
+            <div class="proyecto-contenido">
+
+                <p class="subtitulo">
+                    Sobre el proyecto
+                </p>
+
+                <h2>
+                    Aprender para poder enseñar
+                </h2>
+
+                <p>
+                    Este blog se desarrolla como proyecto final del
+                    curso de Investigación de Operaciones.
+                </p>
+
+                <p>
+                    Su finalidad es presentar los modelos estudiados
+                    mediante explicaciones claras, ejemplos prácticos
+                    y videos educativos.
+                </p>
+
+                <p>
+                    Los contenidos serán revisados y aprobados antes
+                    de su publicación final.
+                </p>
+
+            </div>
+
+
+            <div class="datos-proyecto">
+
+                <div>
+                    <strong>3</strong>
+                    <span>Módulos</span>
+                </div>
+
+                <div>
+                    <strong>10</strong>
+                    <span>Temas principales</span>
+                </div>
+
+                <div>
+                    <strong>100 %</strong>
+                    <span>Contenido educativo</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion">
+
+            <div class="titulo-seccion">
+
+                <p>Metodología</p>
+
+                <h2>
+                    Proceso de elaboración
+                </h2>
+
+                <span>
+                    Cada artículo y video atraviesa un proceso de
+                    revisión antes de publicarse.
+                </span>
+
+            </div>
+
+
+            <div class="pasos">
+
+                <article class="paso">
+
+                    <span>01</span>
+
+                    <h3>Creación</h3>
+
+                    <p>
+                        Elaboración del artículo y grabación del video
+                        correspondiente.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <span>02</span>
+
+                    <h3>Revisión</h3>
+
+                    <p>
+                        Presentación de los materiales al docente para
+                        revisar su contenido.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <span>03</span>
+
+                    <h3>Corrección</h3>
+
+                    <p>
+                        Aplicación de las mejoras solicitadas por el
+                        docente.
+                    </p>
+
+                </article>
+
+
+                <article class="paso">
+
+                    <span>04</span>
+
+                    <h3>Publicación</h3>
+
+                    <p>
+                        Publicación del artículo y video aprobados en
+                        el blog.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion equipo" id="equipo">
+
+            <div class="titulo-seccion">
+
+                <p>Autores</p>
+
+                <h2>
+                    Equipo de trabajo
+                </h2>
+
+                <span>
+                    Estudiantes de Ingeniería en Sistemas de la
+                    Universidad Mariano Gálvez de Guatemala.
+                </span>
+
+            </div>
+
+
+            <div class="integrantes">
+
+                <article class="integrante">
+
+                    <div class="avatar">
+                        LM
+                    </div>
+
+                    <div>
+                        <h3>
+                            Lesly Carolina Méndez Martínez
+                        </h3>
+
+                        
+
+                    </div>
+
+                </article>
+
+
+                <article class="integrante">
+
+                    <div class="avatar">
+                        DM
+                    </div>
+
+                    <div>
+                        <h3>
+                            Darvin Aroldo Marroquín y Marroquín
+                        </h3>
+
+                        
+
+                    </div>
+
+                </article>
+
+
+                <article class="integrante">
+
+                    <div class="avatar">
+                        PL
+                    </div>
+
+                    <div>
+                        <h3>
+                            Pablo Andrés Lucero Alvarado
+                        </h3>
+
+                        <p>
+                            Carné 0907-20-23929
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie-pagina">
+
+        <p>
+            Blog de Conocimiento IO · Investigación de Operaciones
+        </p>
+
+        <p>
+            Universidad Mariano Gálvez de Guatemala ·
+            <span id="anio">2026</span>
+        </p>
+
+    </footer>
+
+
+    <script
+        src="static/js/funciones.js">
+    </script>
+
+</body>
+
+</html>

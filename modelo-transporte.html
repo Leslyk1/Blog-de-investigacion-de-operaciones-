@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Artículo educativo sobre el modelo de transporte"
+    >
+
+    <title>Modelo de transporte</title>
+
+    <link
+        rel="stylesheet"
+        href="static/css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="static/css/transporte.css"
+    >
+<link rel="stylesheet" href="static/css/formulacion.css">
+<link rel="stylesheet" href="static/css/editorial.css"></head>
+
+<body class="edicion-editorial pagina-articulo">
+
+    <header class="encabezado">
+
+        <nav class="navegacion">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-icono">IO</span>
+
+                <span class="logo-texto">
+                    Investigación de Operaciones
+                </span>
+
+            </a>
+
+            <ul class="menu menu-articulo">
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#teoria">
+                        Teoría
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#metodos">
+                        Métodos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#caso-practico">
+                        Caso práctico
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main class="articulo">
+
+        <section class="portada-articulo">
+
+            <p class="etiqueta-articulo">
+                Módulo 2 · Investigación de Operaciones
+            </p>
+
+            <h1>
+                Modelo de transporte
+            </h1>
+
+            <p class="descripcion-articulo">
+                Métodos de esquina noroeste, costo mínimo y
+                aproximación de Vogel.
+            </p>
+
+            <div class="datos-articulo">
+
+                <span>
+                    Autora: Lesly Carolina Méndez Martínez
+                </span>
+
+                <span>
+                    Fase 2
+                </span>
+
+                <span>
+                    Octubre de 2026
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="contenido-articulo" id="teoria">
+
+            <p class="indicador-seccion">
+                Fundamentos
+            </p>
+
+            <h2>
+                ¿Qué es el modelo de transporte?
+            </h2>
+
+            <p>
+                El modelo de transporte es un caso especial de
+                programación lineal. Determina la cantidad que debe
+                enviarse desde cada origen hacia cada destino con el
+                propósito de minimizar el costo total.
+            </p>
+
+            <p>
+                La solución debe respetar dos condiciones: ningún
+                origen puede distribuir más de su oferta y cada destino
+                debe recibir la cantidad indicada por su demanda.
+            </p>
+
+            <div class="formula">
+                Costo total = Σ (cantidad enviada × costo unitario)
+            </div>
+
+
+            <h2>
+                Componentes principales
+            </h2>
+
+            <div class="componentes">
+
+                <article>
+                    <h3>Origen</h3>
+
+                    <p>
+                        Punto que dispone de productos, materiales o
+                        recursos.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Destino</h3>
+
+                    <p>
+                        Punto que necesita recibir una cantidad
+                        determinada.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Oferta</h3>
+
+                    <p>
+                        Cantidad máxima disponible en cada origen.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Demanda</h3>
+
+                    <p>
+                        Cantidad requerida por cada destino.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Costo unitario</h3>
+
+                    <p>
+                        Costo de transportar una unidad por una ruta
+                        específica.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Variable de decisión</h3>
+
+                    <p>
+                        Cantidad que será enviada desde un origen hacia
+                        un destino.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="contenido-articulo fondo-claro">
+
+            <p class="indicador-seccion">
+                Equilibrio
+            </p>
+
+            <h2>
+                Problemas balanceados y desbalanceados
+            </h2>
+
+            <p>
+                Un problema está balanceado cuando la oferta total es
+                igual a la demanda total. En ese caso puede aplicarse
+                directamente un método de solución inicial.
+            </p>
+
+            <p>
+                Cuando la oferta y la demanda son diferentes, el
+                problema está desbalanceado y debe ajustarse antes de
+                efectuar las asignaciones.
+            </p>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Situación</th>
+                            <th>Ajuste necesario</th>
+                            <th>Costo ficticio</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Oferta mayor que demanda</td>
+
+                            <td>
+                                Agregar un destino ficticio por la
+                                diferencia.
+                            </td>
+
+                            <td>0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Demanda mayor que oferta</td>
+
+                            <td>
+                                Agregar un origen ficticio por la
+                                diferencia.
+                            </td>
+
+                            <td>0</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section class="contenido-articulo" id="metodos">
+
+            <p class="indicador-seccion">
+                Métodos de solución
+            </p>
+
+            <h2>
+                Solución básica factible inicial
+            </h2>
+
+            <p>
+                Los métodos de esquina noroeste, costo mínimo y Vogel
+                generan una solución inicial que distribuye toda la
+                oferta y satisface toda la demanda.
+            </p>
+
+            <p>
+                Una solución inicial no siempre representa la solución
+                óptima. Para comprobar la optimalidad puede utilizarse
+                posteriormente el método MODI.
+            </p>
+
+
+            <div class="metodos">
+
+                <article class="metodo">
+
+                    <span>01</span>
+
+                    <h3>
+                        Esquina noroeste
+                    </h3>
+
+                    <p>
+                        Comienza en la celda superior izquierda y
+                        asigna la cantidad menor entre la oferta y la
+                        demanda.
+                    </p>
+
+                    <ol>
+                        <li>Comenzar en la primera celda.</li>
+                        <li>Comparar oferta y demanda.</li>
+                        <li>Asignar la cantidad menor.</li>
+                        <li>Actualizar las cantidades.</li>
+                        <li>Continuar hasta completar la tabla.</li>
+                    </ol>
+
+                </article>
+
+
+                <article class="metodo">
+
+                    <span>02</span>
+
+                    <h3>
+                        Costo mínimo
+                    </h3>
+
+                    <p>
+                        Comienza por la ruta disponible que tenga el
+                        menor costo unitario.
+                    </p>
+
+                    <ol>
+                        <li>Identificar el costo más bajo.</li>
+                        <li>Asignar la cantidad posible.</li>
+                        <li>Actualizar oferta y demanda.</li>
+                        <li>Eliminar la fila o columna satisfecha.</li>
+                        <li>Repetir con las rutas restantes.</li>
+                    </ol>
+
+                </article>
+
+
+                <article class="metodo">
+
+                    <span>03</span>
+
+                    <h3>
+                        Aproximación de Vogel
+                    </h3>
+
+                    <p>
+                        Utiliza penalizaciones para analizar el costo
+                        de oportunidad de no seleccionar una ruta
+                        económica.
+                    </p>
+
+                    <ol>
+                        <li>Identificar los dos costos menores.</li>
+                        <li>Calcular sus diferencias.</li>
+                        <li>Seleccionar la mayor penalización.</li>
+                        <li>Elegir el menor costo de esa línea.</li>
+                        <li>Asignar y volver a calcular.</li>
+                    </ol>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="contenido-articulo fondo-claro"
+            id="caso-practico"
+        >
+
+            <p class="indicador-seccion">
+                Aplicación
+            </p>
+
+            <h2>
+                Caso práctico aplicado a gimnasios
+            </h2>
+
+            <p>
+                Una empresa distribuye cajas de suplementos deportivos
+                desde tres centros de almacenamiento hacia tres
+                gimnasios.
+            </p>
+
+            <p>
+                Los valores de la tabla representan el costo en
+                quetzales de transportar una caja por cada ruta.
+            </p>
+
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Origen</th>
+                            <th>Gimnasio A</th>
+                            <th>Gimnasio B</th>
+                            <th>Gimnasio C</th>
+                            <th>Oferta</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Centro 1</td>
+                            <td>Q3</td>
+                            <td>Q1</td>
+                            <td>Q4</td>
+                            <td>30</td>
+                        </tr>
+
+                        <tr>
+                            <td>Centro 2</td>
+                            <td>Q2</td>
+                            <td>Q6</td>
+                            <td>Q5</td>
+                            <td>40</td>
+                        </tr>
+
+                        <tr>
+                            <td>Centro 3</td>
+                            <td>Q8</td>
+                            <td>Q4</td>
+                            <td>Q3</td>
+                            <td>30</td>
+                        </tr>
+
+                        <tr>
+                            <td>Demanda</td>
+                            <td>25</td>
+                            <td>35</td>
+                            <td>40</td>
+                            <td>100</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="balance">
+
+                <p>
+                    Oferta total: 30 + 40 + 30 = 100 cajas
+                </p>
+
+                <p>
+                    Demanda total: 25 + 35 + 40 = 100 cajas
+                </p>
+
+                <strong>
+                    El problema está balanceado.
+                </strong>
+
+            </div>
+
+
+            <h2>
+                Resultados obtenidos
+            </h2>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Costo</th>
+                            <th>Diferencia</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Esquina noroeste</td>
+                            <td>Q400</td>
+                            <td>Costo de referencia</td>
+                        </tr>
+
+                        <tr>
+                            <td>Costo mínimo</td>
+                            <td>Q250</td>
+                            <td>Ahorro de Q150</td>
+                        </tr>
+
+                        <tr>
+                            <td>Aproximación de Vogel</td>
+                            <td>Q250</td>
+                            <td>Ahorro de Q150</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="resultado-final">
+
+                <strong>
+                    Ahorro obtenido: 37.5 %
+                </strong>
+
+                <p>
+                    Costo mínimo y Vogel producen la mejor solución
+                    inicial encontrada, con un costo de Q250.
+                </p>
+
+            </div>
+
+        </section>
+
+
+<section class="contenido-articulo" id="desarrollo-completo"><p class="indicador-seccion">Desarrollo completo</p><h2>Balance, criterios y limitaciones</h2><p>El origen o destino ficticio no representa una ruta física: iguala oferta y demanda. Si sobra oferta representa capacidad no utilizada; si falta oferta representa demanda que los orígenes reales no pueden cubrir. En los ejemplos del documento se utiliza costo ficticio cero.</p><p>Esquina noroeste es sencilla y rápida: no compara costos y puede asignar rutas caras. Costo mínimo prioriza rutas económicas, pero sus decisiones locales no garantizan el óptimo; debe aplicar un criterio de desempate consistente. Vogel considera el costo de oportunidad, aunque requiere recalcular penalizaciones después de cada asignación.</p><div class="formula">Penalización de Vogel = segundo costo menor − costo menor</div><p>En Vogel, un empate de penalización se resuelve comparando los costos mínimos. Si persiste, puede preferirse la celda que permita la mayor asignación.</p><div class="tabla-contenedor" role="region" aria-label="Tabla con desplazamiento horizontal" tabindex="0"><table><thead><tr><th scope="col">Método</th><th scope="col">Selección</th><th scope="col">Dificultad</th><th scope="col">Uso principal</th></tr></thead><tbody><tr><td>Esquina noroeste</td><td>Posición de la celda</td><td>Baja</td><td>Obtener rápidamente una solución inicial</td></tr><tr><td>Costo mínimo</td><td>Menor costo disponible</td><td>Media</td><td>Priorizar rutas económicas</td></tr><tr><td>Vogel</td><td>Mayor penalización</td><td>Alta</td><td>Obtener una solución inicial generalmente conveniente</td></tr></tbody></table></div><h2>Resolución con esquina noroeste</h2><div class="metodo"><ol><li>Centro 1 → A: min(30, 25) = 25. A queda satisfecho; Centro 1 conserva 5 cajas.</li><li>Centro 1 → B: min(5, 35) = 5. Centro 1 agota su oferta; B necesita 30 cajas.</li><li>Centro 2 → B: min(40, 30) = 30. B queda satisfecho; Centro 2 conserva 10 cajas.</li><li>Centro 2 → C: min(10, 40) = 10. Centro 2 agota su oferta; C necesita 30 cajas.</li><li>Centro 3 → C: min(30, 30) = 30. Se completan oferta y demanda.</li></ol></div><div class="tabla-contenedor" role="region" aria-label="Tabla con desplazamiento horizontal" tabindex="0"><table><thead><tr><th scope="col">Origen</th><th scope="col">Gimnasio A</th><th scope="col">Gimnasio B</th><th scope="col">Gimnasio C</th><th scope="col">Oferta</th></tr></thead><tbody><tr><td>Centro 1</td><td>25</td><td>5</td><td>0</td><td>30</td></tr><tr><td>Centro 2</td><td>0</td><td>30</td><td>10</td><td>40</td></tr><tr><td>Centro 3</td><td>0</td><td>0</td><td>30</td><td>30</td></tr><tr><td>Demanda</td><td>25</td><td>35</td><td>40</td><td>—</td></tr></tbody></table></div><div class="formula">Z = 25×3 + 5×1 + 30×6 + 10×5 + 30×3 = Q400</div><h2>Resolución con costo mínimo</h2><div class="metodo"><ol><li>Centro 1 → B: Q1 es el menor costo; se asignan min(30, 35) = 30 cajas.</li><li>Centro 2 → A: Q2 es el menor costo disponible; se asignan min(40, 25) = 25 cajas.</li><li>Centro 3 → C: Q3 es el menor costo disponible; se asignan min(30, 40) = 30 cajas.</li><li>Centro 2 → C: se asignan 10 cajas para completar C.</li><li>Centro 2 → B: se asignan las 5 cajas restantes.</li></ol></div><div class="tabla-contenedor" role="region" aria-label="Tabla con desplazamiento horizontal" tabindex="0"><table><thead><tr><th scope="col">Origen</th><th scope="col">Gimnasio A</th><th scope="col">Gimnasio B</th><th scope="col">Gimnasio C</th><th scope="col">Oferta</th></tr></thead><tbody><tr><td>Centro 1</td><td>0</td><td>30</td><td>0</td><td>30</td></tr><tr><td>Centro 2</td><td>25</td><td>5</td><td>10</td><td>40</td></tr><tr><td>Centro 3</td><td>0</td><td>0</td><td>30</td><td>30</td></tr><tr><td>Demanda</td><td>25</td><td>35</td><td>40</td><td>—</td></tr></tbody></table></div><div class="formula">Z = 30×1 + 25×2 + 5×6 + 10×5 + 30×3 = Q250</div><h2>Resolución con aproximación de Vogel</h2><h3>Primera ronda de penalizaciones</h3><div class="tabla-contenedor" role="region" aria-label="Tabla con desplazamiento horizontal" tabindex="0"><table><thead><tr><th scope="col">Elemento</th><th scope="col">Dos costos menores</th><th scope="col">Penalización</th></tr></thead><tbody><tr><td>Centro 1</td><td>1 y 3</td><td>2</td></tr><tr><td>Centro 2</td><td>2 y 5</td><td>3</td></tr><tr><td>Centro 3</td><td>3 y 4</td><td>1</td></tr><tr><td>Gimnasio A</td><td>2 y 3</td><td>1</td></tr><tr><td>Gimnasio B</td><td>1 y 4</td><td>3</td></tr><tr><td>Gimnasio C</td><td>3 y 4</td><td>1</td></tr></tbody></table></div><p>La mayor penalización es 3: empatan Centro 2 y Gimnasio B. Sus costos mínimos son Q2 y Q1. Se elige B por su costo Q1 y se asignan 30 cajas desde Centro 1.</p><h3>Rondas restantes</h3><p>Al eliminar Centro 1, la mayor penalización es 6 en A: se asignan 25 cajas desde Centro 2. Después B y C tienen penalización 2; se elige C porque contiene Q3, menor que Q4, y se asignan 30 cajas desde Centro 3. Finalmente Centro 2 envía 10 cajas a C y 5 a B.</p><div class="tabla-contenedor" role="region" aria-label="Tabla con desplazamiento horizontal" tabindex="0"><table><thead><tr><th scope="col">Origen</th><th scope="col">Gimnasio A</th><th scope="col">Gimnasio B</th><th scope="col">Gimnasio C</th><th scope="col">Oferta</th></tr></thead><tbody><tr><td>Centro 1</td><td>0</td><td>30</td><td>0</td><td>30</td></tr><tr><td>Centro 2</td><td>25</td><td>5</td><td>10</td><td>40</td></tr><tr><td>Centro 3</td><td>0</td><td>0</td><td>30</td><td>30</td></tr><tr><td>Demanda</td><td>25</td><td>35</td><td>40</td><td>—</td></tr></tbody></table></div><div class="formula">Z = 30×1 + 25×2 + 5×6 + 10×5 + 30×3 = Q250</div><h2>Interpretación del ahorro</h2><div class="formula">Ahorro = Q400 − Q250 = Q150<br>Porcentaje = (150 / 400) × 100 = 37.5 %</div><p>Costo mínimo y Vogel producen la mejor solución inicial encontrada en esta comparación. No se aplicó una prueba de optimalidad, por lo que Q250 no se presenta como óptimo demostrado.</p></section>
+
+        <section class="contenido-articulo">
+
+            <p class="indicador-seccion">
+                Cierre
+            </p>
+
+            <h2>
+                Conclusiones
+            </h2>
+
+            <p>
+                El modelo de transporte permite organizar la
+                distribución desde varios orígenes hacia diferentes
+                destinos considerando la oferta, la demanda y los
+                costos.
+            </p>
+
+            <p>
+                Esquina noroeste destaca por su sencillez, costo mínimo
+                prioriza las rutas económicas y Vogel utiliza
+                penalizaciones para considerar el costo de
+                oportunidad.
+            </p>
+
+            <p>
+                En el caso práctico, esquina noroeste produjo un costo
+                de Q400 y los otros dos métodos produjeron Q250.
+            </p>
+
+
+            <div class="video-articulo" id="videos">
+    <h2>Videos explicativos</h2>
+    <div class="tarjeta-videos">
+        <img class="imagen-videos" src="static/img/transporte-video.png" alt="Modelo de transporte: oferta, demanda, matriz de costos y rutas de distribución." width="1672" height="941" loading="lazy">
+        <div class="contenido-videos">
+            <span class="etiqueta-videos">Módulo 2 · Videotutoriales</span>
+            <h3>Modelo de transporte</h3>
+            <div class="enlaces-videos">
+                <a class="enlace-video" href="https://drive.google.com/file/d/1-s1CrShck_pLUCs1SIHzaf85JWhKJr3g/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icono-video" aria-hidden="true">▶</span><span>Ver video<small>Abrir en Google Drive</small></span><span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <a
+                href="index.html"
+                class="boton-regresar"
+            >
+                ← Regresar a la página principal
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie-pagina">
+
+        <p>
+            Modelo de transporte · Blog de Conocimiento IO
+        </p>
+
+        <p>
+            Universidad Mariano Gálvez de Guatemala · 2026
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

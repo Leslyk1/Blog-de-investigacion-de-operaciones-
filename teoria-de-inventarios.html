@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Inventarios (Modelos Determinísticos) · Blog de Conocimiento IO</title>
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="static/css/transporte.css">
+    
+    <link rel="stylesheet" href="static/css/formulacion.css">
+
+<link rel="stylesheet" href="static/css/editorial.css"></head>
+<body class="edicion-editorial pagina-articulo">
+    <header class="encabezado">
+        <nav class="navegacion" aria-label="Navegación del artículo">
+            <a href="index.html" class="logo">
+                <span class="logo-icono">IO</span>
+                <span>Investigación de Operaciones</span>
+            </a>
+        </nav>
+    </header>
+    <main class="articulo">
+        <section class="portada-articulo">
+            <p class="etiqueta-articulo">Módulo 3 · Investigación de Operaciones</p>
+            <h1>Teoría de Inventarios (Modelos Determinísticos)</h1>
+            <p class="descripcion-articulo">Cómo decidir cuánto pedir o producir y cuándo reponer las existencias.</p>
+        </section>
+        
+<section class="contenido-articulo">
+    <p class="indicador-seccion">Fundamentos</p>
+    <h2>El costo de pedir y mantener inventario</h2>
+    <p>Comprar lotes pequeños reduce el inventario promedio, pero obliga a ordenar con mayor frecuencia. Comprar lotes grandes reduce el número de pedidos, pero aumenta el costo de almacenamiento. Los modelos determinísticos buscan el equilibrio cuando la demanda, los costos y el plazo de entrega son conocidos.</p>
+    <p><strong>Notación:</strong> D es la demanda anual; K, el costo por pedido o preparación; h, el costo anual de mantener una unidad; c, el precio unitario; Q, el tamaño del lote; y L, el tiempo de entrega. Las tasas y los tiempos deben usar unidades compatibles.</p>
+</section>
+<section class="contenido-articulo fondo-claro" id="eoq">
+    <p class="indicador-seccion">Modelo 1</p>
+    <h2>Lote económico de pedido (EOQ)</h2>
+    <p>El lote llega de una vez y se consume a ritmo constante, sin faltantes. Se hacen D/Q pedidos al año y el inventario promedio es Q/2. El lote óptimo iguala los costos anuales de ordenar y mantener.</p>
+    <div class="formula">Costo anual = cD + KD/Q + hQ/2<br>Q* = √(2KD/h)<br>Punto de reorden = demanda diaria × plazo en días</div>
+    <p><strong>Ejemplo de la ferretería:</strong> con D = 12 000 unidades, K = $100, c = $25 y una tasa de mantenimiento del 20 %, h = $5. El lote económico es de aproximadamente 693 unidades y el ciclo dura unos 21 días. Con un plazo de entrega de siete días y un año de 365 días, se vuelve a pedir al llegar a unas 230 unidades.</p>
+    <p>El costo variable anual en el óptimo es de $3 464,10. Pedir 900 unidades lo eleva a $3 583,33, aproximadamente un 3,4 %. La diferencia muestra por qué pequeños ajustes al lote pueden tener un efecto limitado en el costo.</p>
+</section>
+<section class="contenido-articulo" id="epq">
+    <p class="indicador-seccion">Modelo 2</p>
+    <h2>Lote económico de producción (EPQ)</h2>
+    <p>La reposición es gradual. Mientras la planta produce a una tasa p mayor que D, el inventario crece a razón de p − D. Cuando termina el lote, el consumo reduce las existencias hasta cero.</p>
+    <div class="formula">Inventario máximo = Q(1 − D/p)<br>Q* = √[2KD / (h(1 − D/p))]</div>
+    <p><strong>Ejemplo de la planta:</strong> con D = 24 000, p = 60 000, K = $300 y h = $2, conviene producir unas 3 464 unidades por lote. El inventario máximo es de unas 2 078 unidades. Cada ciclo dura 52,7 días y se produce durante los primeros 21,1 días.</p>
+</section>
+<section class="contenido-articulo fondo-claro" id="faltantes">
+    <p class="indicador-seccion">Modelo 3</p>
+    <h2>EOQ con faltantes permitidos</h2>
+    <p>Cuando los clientes aceptan esperar, se pueden acumular pedidos pendientes y cubrirlos al recibir el siguiente lote. π es el costo anual por unidad pendiente, S el inventario máximo y B el faltante máximo.</p>
+    <div class="formula">Costo variable = KD/Q + hS²/(2Q) + πB²/(2Q)<br>Q* = √[(2KD/h) × ((h + π)/π)]<br>S* = πQ*/(h + π) · B* = Q* − S*</div>
+    <p><strong>Ejemplo de la ferretería:</strong> con los datos del EOQ y π = $20, el lote óptimo es de unas 775 unidades. El inventario máximo es de unas 620 unidades y pueden acumularse hasta 155 pendientes. El punto de reorden se ajusta a 230 − 155 ≈ 75 unidades. El costo variable baja a $3 098,39 al año, cerca de un 10,6 % menos que en el EOQ clásico.</p>
+</section>
+<section class="contenido-articulo" id="descuentos">
+    <p class="indicador-seccion">Modelo 4</p>
+    <h2>EOQ con descuentos por cantidad</h2>
+    <p>Si el descuento aplica a todas las unidades del lote, se calcula el EOQ con el costo de mantenimiento de cada tramo. Si el EOQ cae fuera del rango, se evalúa el límite factible más cercano. Después se comparan los costos anuales incluyendo la compra, ya que el precio unitario varía.</p>
+    <div class="formula">h = tasa de mantenimiento × precio unitario<br>Costo anual = cD + KD/Q + hQ/2</div>
+    <p><strong>Ejemplo:</strong> con D = 20 000, K = $100 y una tasa del 20 %, se obtienen los siguientes candidatos por tramo:</p>
+    <div class="tabla-contenedor" role="region" aria-label="Comparación de descuentos por cantidad" tabindex="0">
+        <table>
+            <thead><tr><th scope="col">Tramo</th><th scope="col">Precio unitario</th><th scope="col">Lote evaluado</th><th scope="col">Costo anual</th></tr></thead>
+            <tbody>
+                <tr><td>1 a 999</td><td>$10,00</td><td>999</td><td>$203 001,00</td></tr>
+                <tr><td>1 000 a 2 499</td><td>$9,50</td><td>≈ 1 451</td><td>$192 756,81</td></tr>
+                <tr><td>2 500 o más</td><td>$9,00</td><td>2 500</td><td>$183 050,00</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="resultado-final"><strong>Mejor opción: pedir 2 500 unidades</strong><p>Se hacen ocho pedidos al año. El costo total incluye $180 000 de compra, $800 de pedidos y $2 250 de almacenamiento.</p></div>
+</section>
+<section class="contenido-articulo fondo-claro">
+    <h2>Cómo elegir el modelo</h2>
+    <p>Usa EOQ para compras sin faltantes ni descuentos; EPQ para producción gradual; EOQ con faltantes si se aceptan pedidos pendientes; y EOQ con descuentos si el precio depende de la cantidad comprada.</p>
+</section>
+<section class="contenido-articulo fondo-claro" id="videos">
+    <h2>Videos explicativos</h2>
+    <div class="tarjeta-videos">
+        <img class="imagen-videos" src="static/img/inventarios-video.png" alt="Portada de Teoría de Inventarios: demanda, costos, punto de reorden y lote económico." width="1672" height="941" loading="lazy">
+        <div class="contenido-videos">
+            <span class="etiqueta-videos">Módulo 3 · Videotutoriales</span>
+            <h3>Teoría de Inventarios (Modelos Determinísticos)</h3>
+            <div class="enlaces-videos">
+                <a class="enlace-video" href="https://drive.google.com/file/d/17WMeQH3LGwVfi_rl_QFcY64ic-afow3v/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icono-video" aria-hidden="true">▶</span><span>Ver video<small>Abrir en Google Drive</small></span><span aria-hidden="true">↗</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <div class="contenido-articulo">
+            <a class="boton-regresar" href="index.html#modulos">← Regresar a los módulos</a>
+        </div>
+    </main>
+    <footer class="pie-pagina">Blog de Conocimiento IO · Universidad Mariano Gálvez de Guatemala</footer>
+</body>
+</html>

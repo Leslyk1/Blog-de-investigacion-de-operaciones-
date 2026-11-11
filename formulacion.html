@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende a formular modelos matemáticos con variables, objetivos y restricciones mediante un ejemplo de producción de camisetas.">
+    <title>Formulación de modelos</title>
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="static/css/transporte.css">
+    <link rel="stylesheet" href="static/css/formulacion.css">
+<link rel="stylesheet" href="static/css/editorial.css"></head>
+<body class="edicion-editorial pagina-articulo">
+    <header class="encabezado">
+        <nav class="navegacion" aria-label="Navegación del artículo">
+            <a href="index.html" class="logo" aria-label="Ir a la página principal">
+                <span class="logo-icono">IO</span>
+                <span class="logo-texto">Investigación de Operaciones</span>
+            </a>
+            <ul class="menu menu-articulo">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#teoria">Teoría</a></li>
+                <li><a href="#elementos">Elementos</a></li>
+                <li><a href="#caso-practico">Caso práctico</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="articulo">
+        <section class="portada-articulo">
+            <p class="etiqueta-articulo">Módulo 1 · Investigación de Operaciones</p>
+            <h1>Formulación de modelos</h1>
+            <p class="descripcion-articulo">De una situación real a sus variables, objetivos y restricciones.</p>
+            <div class="datos-articulo">
+                <span>Fase 1</span>
+                <span>Agosto de 2026</span>
+            </div>
+        </section>
+
+        <section class="contenido-articulo" id="teoria">
+            <p class="indicador-seccion">Fundamentos</p>
+            <h2>¿Qué significa formular un modelo?</h2>
+            <p>Transformar una situación real en un modelo matemático permite identificar las decisiones, organizar los datos y expresar los objetivos y las limitaciones del problema.</p>
+            <p>La formulación de modelos consiste en identificar los elementos importantes de un problema real y representarlos mediante expresiones matemáticas.</p>
+            <p>No se pretende reproducir todos los detalles de la realidad. Se seleccionan aquellos que tienen relación directa con la decisión que se desea tomar.</p>
+            <p>Por ejemplo, si una empresa necesita determinar cuánto producir de dos productos, debemos identificar qué cantidades se pueden decidir, qué recursos están disponibles, qué objetivo se quiere alcanzar y qué condiciones deben respetarse.</p>
+
+            <h2>Modelo matemático</h2>
+            <p>Un modelo matemático representa un sistema o problema mediante variables, parámetros, ecuaciones, desigualdades y otras condiciones.</p>
+            <div class="formula">3x₁ + 2x₂ ≤ 100</div>
+            <p>Esta expresión podría representar la disponibilidad de un recurso. No constituye por sí sola todo el modelo: es una restricción que debe acompañarse de las variables, la función objetivo y las demás condiciones.</p>
+        </section>
+
+        <section class="contenido-articulo fondo-claro" id="elementos">
+            <p class="indicador-seccion">Estructura del modelo</p>
+            <h2>Elementos de un modelo</h2>
+            <div class="componentes">
+                <article>
+                    <h3>Variables de decisión</h3>
+                    <p>Son las cantidades que necesitamos determinar. Representan aquello sobre lo que tenemos capacidad de decidir.</p>
+                    <p>En una empresa que fabrica dos productos, x₁ representa las unidades del producto A y x₂ las unidades del producto B.</p>
+                </article>
+                <article>
+                    <h3>Parámetros</h3>
+                    <p>Son los datos conocidos: ganancias, costos, horas disponibles, materia prima, capacidad de producción y demanda.</p>
+                    <p>Si una unidad del producto A genera Q40 de ganancia, ese valor es un parámetro.</p>
+                </article>
+                <article>
+                    <h3>Función objetivo</h3>
+                    <p>Expresa matemáticamente lo que queremos conseguir: maximizar ganancias o producción, o minimizar costos, tiempo o desperdicios.</p>
+                </article>
+                <article>
+                    <h3>Restricciones</h3>
+                    <p>Representan las limitaciones y condiciones que deben cumplirse, como la disponibilidad de materiales, horas o presupuesto.</p>
+                </article>
+                <article>
+                    <h3>No negatividad</h3>
+                    <p>Cuando las variables representan cantidades que no pueden ser negativas, se establece x₁ ≥ 0 y x₂ ≥ 0. Una cantidad negativa de productos fabricados no tendría sentido en este contexto.</p>
+                </article>
+            </div>
+            <div class="balance">
+                <p><strong>Variable de decisión:</strong> lo que necesitamos determinar.</p>
+                <p><strong>Parámetro:</strong> lo que ya conocemos.</p>
+            </div>
+
+            <h2>Construir la función objetivo</h2>
+            <p>Si cada unidad del producto A genera Q40 y cada unidad del producto B genera Q30, la ganancia total es Z = 40x₁ + 30x₂. Si buscamos la mayor ganancia posible, escribimos:</p>
+            <div class="formula">Maximizar Z = 40x₁ + 30x₂</div>
+
+            <h2>Interpretar las restricciones</h2>
+            <p>En 3x₁ + 2x₂ ≤ 100, cada unidad de x₁ utiliza tres unidades de un recurso, cada unidad de x₂ utiliza dos y existen como máximo 100 unidades disponibles.</p>
+            <p>El signo depende de la condición que presenta el problema:</p>
+            <div class="tabla-contenedor" role="region" aria-label="Signos de las restricciones; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Condición</th><th scope="col">Expresión de ejemplo</th><th scope="col">Interpretación</th></tr></thead>
+                    <tbody>
+                        <tr><td>Como máximo</td><td>x₁ + x₂ ≤ 100</td><td>No superar 100 unidades</td></tr>
+                        <tr><td>Como mínimo</td><td>x₁ + x₂ ≥ 100</td><td>Alcanzar al menos 100 unidades</td></tr>
+                        <tr><td>Exactamente</td><td>x₁ + x₂ = 100</td><td>Cumplir una cantidad de 100 unidades</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="contenido-articulo" id="caso-practico">
+            <p class="indicador-seccion">Aplicación paso a paso</p>
+            <h2>Ejemplo práctico: producción de camisetas</h2>
+            <p>Una pequeña empresa fabrica camisetas básicas y premium. Desea formular un modelo para maximizar su ganancia.</p>
+            <div class="tabla-contenedor" role="region" aria-label="Datos de producción de camisetas; desplazar horizontalmente para ver todas las columnas" tabindex="0">
+                <table>
+                    <thead><tr><th scope="col">Dato por camiseta</th><th scope="col">Básica</th><th scope="col">Premium</th><th scope="col">Disponible</th></tr></thead>
+                    <tbody>
+                        <tr><td>Horas de trabajo</td><td>2</td><td>3</td><td>60</td></tr>
+                        <tr><td>Unidades de tela</td><td>3</td><td>2</td><td>60</td></tr>
+                        <tr><td>Ganancia</td><td>Q20</td><td>Q30</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Paso 1. Definir las variables</h2>
+            <p><strong>x:</strong> cantidad de camisetas básicas que se fabricarán.</p>
+            <p><strong>y:</strong> cantidad de camisetas premium que se fabricarán.</p>
+
+            <h2>Paso 2. Formular el objetivo</h2>
+            <p>Cada camiseta básica genera Q20 y cada premium genera Q30.</p>
+            <div class="formula">Maximizar Z = 20x + 30y</div>
+
+            <h2>Paso 3. Expresar el límite de trabajo</h2>
+            <p>Cada camiseta básica requiere dos horas y cada premium requiere tres. La empresa dispone de 60 horas:</p>
+            <div class="formula">2x + 3y ≤ 60</div>
+            <p>Utilizamos ≤ porque no podemos superar las horas disponibles.</p>
+
+            <h2>Paso 4. Expresar el límite de tela</h2>
+            <p>Cada camiseta básica utiliza tres unidades de tela y cada premium utiliza dos. Existen 60 unidades:</p>
+            <div class="formula">3x + 2y ≤ 60</div>
+
+            <h2>Paso 5. Establecer la no negatividad</h2>
+            <div class="formula">x ≥ 0, y ≥ 0</div>
+
+            <h2>Modelo completo</h2>
+            <div class="formula">
+                Maximizar Z = 20x + 30y<br>
+                Sujeto a:<br>
+                2x + 3y ≤ 60<br>
+                3x + 2y ≤ 60<br>
+                x, y ≥ 0
+            </div>
+            <p>El modelo ya está formulado. Determinar sus valores de solución corresponde a una etapa posterior, mediante un método de optimización.</p>
+        </section>
+
+        <section class="contenido-articulo fondo-claro">
+            <p class="indicador-seccion">Interpretación</p>
+            <h2>¿Cuándo utilizar ≥?</h2>
+            <p>Se utiliza cuando el problema establece una cantidad mínima. Si la empresa tuviera que producir al menos 20 camisetas, se añadiría:</p>
+            <div class="formula">x + y ≥ 20</div>
+            <p>Esta condición es un ejemplo adicional; no pertenece al planteamiento original de la empresa.</p>
+            <p>Expresiones como «al menos», «como mínimo», «por lo menos» y «no menos de» suelen indicar una restricción de este tipo.</p>
+        </section>
+
+        <section class="contenido-articulo">
+            <p class="indicador-seccion">Cierre</p>
+            <h2>Conclusión</h2>
+            <p>Formular un modelo permite transformar una situación real en una representación matemática. Primero se identifican las decisiones, los datos, el objetivo y las restricciones. Con esos elementos se construye un modelo que posteriormente puede resolverse mediante un método adecuado.</p>
+            <div class="video-articulo" id="videos">
+                <h2>Videos explicativos</h2>
+                <div class="tarjeta-videos">
+                    <img class="imagen-videos" src="static/img/formulacion-modelos.png" alt="Formulación de modelos: función objetivo, variables, restricciones y modelo matemático." width="1672" height="941" loading="lazy">
+                    <div class="contenido-videos">
+                        <span class="etiqueta-videos">Módulo 1 · Videotutoriales</span>
+                        <h3>Formulación de modelos</h3>
+                        <p class="autor-videos">Pablo Andrés Lucero Alvarado</p>
+                        <div class="enlaces-videos">
+                            <a class="enlace-video" href="https://drive.google.com/file/d/1mP-psBwXMmAmNdzGcjPPpkZyxCRCk0Dw/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="icono-video" aria-hidden="true">▶</span><span>Ver video<small>Abrir en Google Drive</small></span><span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="boton-regresar">← Regresar a la página principal</a>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Formulación de modelos · Blog de Conocimiento IO</p>
+        <p>Universidad Mariano Gálvez de Guatemala · 2026</p>
+    </footer>
+</body>
+</html>
